@@ -39,7 +39,7 @@ class TradeClient:
         Returns a nonce
         Used in authentication
         """
-        return str(time.time() * 1000000)
+        return '{0:f}'.format(time.time() * 1000000)
 
     def _sign_payload(self, payload):
         j = json.dumps(payload)
