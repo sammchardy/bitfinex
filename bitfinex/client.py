@@ -39,7 +39,7 @@ class TradeClient:
         Returns a nonce
         Used in authentication
         """
-        return str(time.time() * 1000000)
+        return '{0:f}'.format(time.time() * 1000000)
 
     def _sign_payload(self, payload):
         j = json.dumps(payload)
@@ -105,7 +105,7 @@ class TradeClient:
         json_resp = r.json()
 
         try:
-            json_resp['avg_excution_price']
+            json_resp['avg_execution_price']
         except:
             return json_resp['message']
 
@@ -144,7 +144,7 @@ class TradeClient:
         json_resp = r.json()
 
         try:
-            json_resp['avg_excution_price']
+            json_resp['avg_execution_price']
         except:
             return json_resp['message']
 
